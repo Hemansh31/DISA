@@ -1,0 +1,128 @@
+.content{
+  background:linear-gradient( 20deg,black 50%,white 100px);
+  display: grid;
+  grid-template-columns: 15vw 70vw 15vw;
+  grid-template-rows: 82vh;
+}
+.fm{
+  grid-column-start: 2;
+  grid-row-start:1;
+  width:70vw;
+  height:82vh;
+  overflow: auto;
+  background: linear-gradient(-25deg, #276EF1 50%,ghostwhite 10px);
+}
+@media only screen and (max-width: 768px){
+    .content{
+      grid-template-columns: 100vw;
+      grid-template-rows: 82vh;
+    }
+    .fm{
+      grid-column-start: 1;
+      grid-row-start:1;
+      width:100vw;
+      height:82vh;
+      overflow: auto;
+        font-family: azo-sans-web, sans-serif;
+    }
+}
+.thead{
+  text-align: center;
+    font-family: azo-sans-web, sans-serif;
+}
+.tblwrp{
+  width: 100%;
+  align-items: center;
+
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  table-layout: fixed;
+    font-family: azo-sans-web, sans-serif;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  padding: .35em;
+}
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+table tr:hover {background-color: #ddd;}
+
+table th,
+table td {
+  padding: .625em;
+  font-size: .85em;
+  text-align: center;
+  letter-spacing: .01em;
+  height: 1.75em;
+}
+
+table th {
+  font-size: .95em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background-color: black;
+  color: white;
+  font-family: azo-sans-web, sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 15px;
+    text-align: right;
+    background: linear-gradient(90deg, #f2f2f2 45%, white 10px);
+    height: 1em;
+  }
+
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

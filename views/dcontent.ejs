@@ -1,0 +1,91 @@
+<div class="wrapper">
+<div class="navbar">
+  <div class="heading"><p class="fon">PICK ME</p></div>
+  <div class="btns">
+    <a href="/driver_dashboard"><button class="button button1" name="Home">Home</button></a>
+    <button id="off" class="button button1" name="locshare" onclick="startsharing()">Go live</button>
+    <button id="on" class="button button1" name="locshare" onclick="stopsharing()" style="display:none;">Live</button>
+  <a href="/logout">  <button class="button button2" name="Sign up">Logout</button></a>
+    <div class="dropdown" style="float:right;">
+<button class="dropbtn"><div class="hmbrg"></div>
+<div class="hmbrg"></div>
+<div class="hmbrg"></div></button>
+<div class="dropdown-content">
+<a href="/driver_dashboard">Home</a>
+<a onclick="loc()">Go live</a>
+<a href="/logout">Logout</a>
+</div>
+</div>
+  </div>
+</div>
+  <div class="content">
+
+
+<div class="hm" id="hmpg">
+  <div class="indiv" id="inhm">
+    <div class="head1" onclick="smc1()"><p>Timetable</p></div>
+    <div class="head2" onclick="smc2()"><p>Booked Rides</p></div>
+<div class="mc2">
+  <table>
+  <thead>
+  <tr>
+  <th scope="col">Pickup Time</th>
+  <th scope="col">Pickup Location</th>
+  <th scope="col">Drop Location</th>
+  <th scope="col">Rider Contact</th>
+  </tr>
+  </thead>
+  <tbody>
+    <% farr.forEach(function(dat) { %>
+      <tr>
+        <td scope="row" data-label="Pickup Time"><%=(dat.ptime)%></td>
+        <td data-label="Pickup Location"><%=(dat.ploc)%></td>
+        <td data-label="Drop Location"><%=(dat.dloc)%></td>
+        <td data-label="Rider Contact"><%=(dat.rcontact)%></td>
+      </tr>
+    <% }); %>
+
+  </tbody>
+  </table>
+
+</div>
+<div class="mc1">
+  <table>
+  <thead>
+  <tr>
+  <th scope="col">Pickup Time</th>
+  <th scope="col">Pickup Location</th>
+  <th scope="col">Driver Contact</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+  <td scope="row" data-label="Pickup Time">Sample Data 1</td>
+  <td data-label="Pickup Location">Sample Data 1</td>
+  <td data-label="Driver Contact">Sample Data 1</td>
+  </tr>
+  <tr>
+  <td scope="row" data-label="Pickup Time">Sample Data 2</td>
+  <td data-label="Pickup Location">Sample Data 2</td>
+  <td data-label="Driver Contact">Sample Data 2</td>
+  </tr>
+  <tr>
+  <td scope="row" data-label="Pickup Time">Sample Data 3</td>
+  <td data-label="Pickup Location">Sample Data 3</td>
+  <td data-label="Driver Contact">Sample Data 3</td>
+  </tr>
+  <tr>
+  <td scope="row" data-label="Pickup Time">Sample Data 4</td>
+  <td data-label="Pickup Location">Sample Data 4</td>
+  <td data-label="Driver Contact">Sample Data 4</td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+</div>
+</div>
+<div class="footer">
+  <%-include('footer');%>
+  </div>
+</div>

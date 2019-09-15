@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/my_ride.css">
+    <link rel="stylesheet" href="/css/hmtab.css">
+    <script src="/script/home.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="navbar">
+        <div class="heading"><p class="fon">PICK ME</p></div>
+        <div class="btns"><button class="button button1" name="login" onclick="oli()">Log in</button><button class="button button2" name="Sign up" onclick="osu()">Sign up</button></div>
+      </div>
+      <div class="content">
+      <div class="pseudowrapper" id="ddm">
+        <div class="cross"><img src="/images/cross.png" class="crimg" onclick="cli()"></div>
+        <div class="pseudo">
+        <div class="driver"><div class="steer"><img src="/images/steering.png" class="simg"></div>
+        <div class="link"><a href="/sign_in_Driver" class="alink">Driver login<img src="/images/arrow.png" class="aimg"></a><div class="line" style="
+    height: 3px;
+    background-color: black;
+    margin-top: -15px;
+    width: 98%;
+"></div></div>
+      </div>
+        <div class="rider"><div class="steer"><img src="/images/person.jpg" class="simg"></div>
+        <div class="link"><a href="/sign_in_Rider" class="alink">Rider login<img src="/images/arrow.png" class="aimg"></a><div class="line" style="
+    height: 3px;
+    background-color: black;
+    margin-top: -21px;
+    width: 98%;
+"></div></div></div></div>
+      </div>
+      <div class="pseudowrapper" id="ddm2">
+        <div class="cross"><img src="/images/cross.png" class="crimg" onclick="cli()"></div>
+        <div class="pseudo">
+        <div class="driver"><div class="steer"><img src="/images/steering.png" class="simg"></div>
+        <div class="link"><a href="/sign_up_Driver" class="alink">Driver Sign Up<img src="/images/arrow.png" class="aimg"></a><div class="line" style="
+    height: 3px;
+    background-color: black;
+    margin-top: -15px;
+    width: 98%;
+"></div></div>
+      </div>
+        <div class="rider"><div class="steer"><img src="/images/person.jpg" class="simg"></div>
+        <div class="link"><a href="/caution" class="alink">Rider Sign Up<img src="/images/arrow.png" class="aimg"></a><div class="line" style="
+    height: 3px;
+    background-color: black;
+    margin-top: -21px;
+    width: 98%;
+"></div></div></div></div>
+      </div>
+<%-include('hmcontent');%>
+
+        </div>
+        <div class="footer">
+          <%-include('footer');%>
+          </div>
+    </div>
+  </body>
+</html>

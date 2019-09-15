@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>My Rides</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/my_ride.css">
+  </head>
+  <body>
+    <div class="wrapper">
+    <%-include('nav');%>
+      <div class="content">
+        <div class="fm">
+          <h1 class="thead">Your Timetable</h1>
+          <h2 class="thead"><%=day%></h2>
+          <div class="tblwrp">
+          <center>
+            <table>
+  <thead>
+    <tr>
+      <th scope="col">Pickup Time</th>
+      <th scope="col">Pickup Location</th>
+      <th scope="col">Drop Location</th>
+      <th scope="col">Driver Contact</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% farr.forEach(function(dat) { %>
+      <tr>
+        <td scope="row" data-label="Pickup Time"><%=(dat.ptime)%></td>
+        <td data-label="Pickup Location"><%=(dat.ploc)%></td>
+        <td data-label="Drop Location"><%=(dat.dloc)%></td>
+        <td data-label="Driver Contact">N.A.</td>
+      </tr>
+    <% }); %>
+
+  </tbody>
+</table></center>
+        </div>
+          </div>
+        </div>
+        <div class="footer">
+          <%-include('footer');%>
+          </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Request Form</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+      <link rel="stylesheet" href="/css/re_form.css">
+      <script src="/script/req_form.js" charset="utf-8"></script>
+        <script src="/script/adride.js" charset="utf-8"></script>
+      </head>
+  <body>
+    <div class="wrapper">
+  <%-include('nav');%>
+      <div class="content">
+        <div class="pop" id="fpop"><div class="cross"><img src="/images/cross.png" class="crimg" onclick="clfill()"></div>
+          <div id="fform">
+            <div class="form-style-5 fifo" >
+              <form>
+              <fieldset>
+              <legend><span class="number">1</span> Day</legend>
+              <select id="fillday" name="day">
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+              </select>
+              </fieldset>
+              <fieldset>
+              <legend><span class="number">2</span> Pickup Location</legend>
+              <select list="ploc" name="ploc" placeholder="Enter Pickup Location" id="fillpl" required >
+              <%-include('loc');%>
+            </select>
+              </fieldset>
+              <fieldset>
+              <legend><span class="number">3</span> Drop Location</legend>
+              <select list="dloc" name="dloc" placeholder="Enter Drop Location" id="filldl" required >
+              <%-include('loc');%>
+            </select>
+              </fieldset>
+              <fieldset>
+              <legend><span class="number">4</span> Pickup Time (24 hour Format)</legend>
+              <div class="time">
+                <select id="hr" name="hours">
+                  <% var i; %>
+                  <%  for(i=7;i<20;i++){   %>
+                  <option value=<%-i%>><%-i%></option>
+                  <%}%>
+                </select>
+                <select id="min" name="minutes">
+                  <% var i; %>
+                  <% for(i=0;i<60;i++){   %>
+                  <option value=<%-i%>>
+                  <%if(i<10){ %>
+                     0<%-i%>
+                     <% } %>
+                     <% if(i>=10){ %>
+                       <%-i%>
+                       <% } %>
+                  </option>
+                  <%}%>
+                </select>
+              </div>
+              </fieldset>
+              <button type="button" class="adride "name="button" onclick="cruser()">Add Ride</button>
+            </form>
+            </div>
+          </div>
+      </div>
+      <div class="pop" id="vpop"><div class="cross"><img src="/images/cross.png" class="crimg" onclick="clvfill()"></div>
+<div class="tblwrp">
+  <center>
+    <table>
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">Pickup Location</th>
+        <th scope="col">Drop Location</th>
+        <th scope="col">Pickup Time</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="dynamic">
+
+    </tbody>
+  </table>
+  </center>
+</div>
+</div>
+        <div class="fm">
+          <div class="form-style-5">
+<form  method="post" action="/req_form" enctype="multipart/form-data">
+<fieldset class="f1">
+<legend><span class="number">1</span> Rider Info</legend>
+<input type="text" name="field1" placeholder="Your Name *" required autofocus>
+<input type="text" name="field2" placeholder="Your Entry Number *" pattern="[0-9]{4}[A-Za-z0-9]{3}[0-9]{4}" required>
+<input type="tel" name="field3" placeholder="Your Phone Number *" pattern="[0-9]{10}" required>
+</fieldset>
+<fieldset>
+<legend><span class="number">2</span> Upload Documents</legend>
+<label class="fileContainer">
+    Your IIT Delhi Identity card
+    <input type="file" name="idfile" required/>
+</label>
+<label class="fileContainer">
+    Proof of Medical Condition
+    <input type="file" name="mcfile" required/>
+</label>
+</fieldset>
+<fieldset>
+<legend><span class="number">3</span> Subscription Details</legend>
+<label for="date">Subscription Start Date<input type="date" name="field4" value="2019-01-01" required></label>
+<label for="date">Subscription End Date<input type="date" name="field5" value="2019-01-30" required></label>
+</fieldset>
+<fieldset>
+<legend><span class="number">4</span> Schedule Rides</legend>
+<input id="nrides" type="text" name="" value="0 Rides added" readonly>
+<button type="button" name="button" class="adbtn" onclick="fill()"><span class="plus">+</span></button>
+<button type="button" name="button" class="adbtn1" onclick="vfill()">View Rides</button>
+</fieldset>
+<fieldset style="display:none;">
+<input id="d1" type="text" name="mon" value="" readonly>
+<input id="d2" type="text" name="tue" value="" readonly>
+<input id="d3" type="text" name="wed" value="" readonly>
+<input id="d4" type="text" name="thurs" value="" readonly>
+<input id="d5" type="text" name="fri" value="" readonly>
+</fieldset>
+<input type="submit" value="File Request" />
+</form>
+</div>
+
+          </div>
+        </div>
+        <div class="footer">
+          <%-include('footer');%>
+          </div>
+    </div>
+  </body>
+</html>
